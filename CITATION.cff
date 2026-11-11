@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use MDPI Review Suite in your research, academic work, teaching, or scientific publications, please cite this software."
+type: software
+
+title: "MDPI Review Suite"
+short-title: "MDPI"
+version: "1.0.0"
+
+abstract: >
+  MDPI Review Suite is a collection of specialized AI-agent skills for
+  reviewing academic papers against the MDPI journal rubric and the official
+  MDPI peer-review form. It supports pre-submission dry-runs, actual reviews,
+  and rebuttal preparation for MDPI journals.
+
+authors:
+  - family-names: "La Cruz"
+    given-names: "Alexandra"
+
+repository-code: "https://github.com/alexandralacruz/mdpi-suite"
+
+license: "LicenseRef-MDPI-NC-1.0"
+
+keywords:
+  - peer review
+  - MDPI
+  - academic publishing
+  - artificial intelligence
+  - AI agents
+  - scientific review
+  - journal review
+  - research automation
+  - agent skills
+
+date-released: "2026-11-11"
+
+preferred-citation:
+  type: software
+  title: "MDPI Review Suite"
+  authors:
+    - family-names: "La Cruz"
+      given-names: "Alexandra"
+  year: 2026
+  url: "https://github.com/alexandralacruz/mdpi-suite"
