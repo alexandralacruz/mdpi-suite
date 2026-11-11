@@ -57,6 +57,23 @@ There are multi-agent installers (pi, Claude Code, Codex CLI):
 curl -sSL https://raw.githubusercontent.com/alexandralacruz/mdpi-suite/main/install.sh | bash
 curl -sSL https://raw.githubusercontent.com/alexandralacruz/mdpi-suite/main/install.sh | bash -s -- --all --agent codex
 ```
+> These require `bash` (Linux, macOS, WSL or Git Bash). They do **not** work in native PowerShell.
+
+**One-liner (Windows PowerShell, from any machine):**
+```powershell
+# Install everything into pi
+irm https://raw.githubusercontent.com/alexandralacruz/mdpi-suite/main/install.ps1 | iex
+
+# With arguments (e.g. Codex CLI)
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/alexandralacruz/mdpi-suite/main/install.ps1))) -All -Agent codex
+```
+
+> **Windows execution policy:** if PowerShell refuses to run a locally downloaded
+> `install.ps1` (`... no se puede cargar porque la ejecución de scripts está
+> deshabilitada`), use `Unblock-File .\install.ps1` and/or run it with:
+> ```powershell
+> powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -All
+> ```
 
 Destinations by agent:
 
