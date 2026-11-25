@@ -189,7 +189,7 @@ Recommend **"Yes"** (reviewers are typically notified of the final decision). Fo
 
 ## Output Format
 
-Emit the review exactly in the MDPI report layout so it can be transcribed/pasted into the MDPI form. Then append an internal rationale (not part of the form) for traceability.
+Emit the review exactly in the MDPI report layout so it can be transcribed/pasted into the MDPI form. Then append an internal rationale (not part of the form) for traceability. In addition to displaying it, **write the complete report to a Markdown file** named `[article_name]_review.md` (e.g., `deep-learning-sensors_review.md`), replacing `[article_name]` with the actual article name.
 
 ```markdown
 # MDPI Review Report

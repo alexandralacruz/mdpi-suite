@@ -1,13 +1,13 @@
 ---
 name: reviewer-mdpi-journal
-description: Revisa un artículo científico con la rúbrica de evaluación de las revistas MDPI. Ejecuta primero el skill `reviewer` para el análisis técnico profundo (8 dimensiones), luego califica el manuscrito con una rúbrica ponderada (alcance/encaje con la revista, originalidad, significancia, solidez científica, presentación, interés para lectores, referencias e integridad ética) y emite un veredicto MDPI con plan de mejora. Use when se revisa un artículo para una revista MDPI, se simula una revisión antes de enviar, o se responde a revisores MDPI.
+description: Revisa un artículo científico con la rúbrica de evaluación de las revistas MDPI. Ejecuta primero el skill `reviewer` para el análisis técnico profundo (8 dimensiones), luego califica el manuscrito con una rúbrica ponderada (alcance/encaje con la revista, originalidad, significancia, solidez científica, presentación, interés para lectores, referencias e integridad ética) y emite un veredicto MDPI con plan de mejora, además de rellenar el formulario oficial MDPI (Report 1) con los datos del revisor. Use when se revisa un artículo para una revista MDPI, se simula una revisión antes de enviar, o se responde a revisores MDPI.
 ---
 
 # Revisor de Artículos — Rúbrica de Revista MDPI
 
 Revisa un artículo científico aplicando la **rúbrica de evaluación de las revistas MDPI**. Reutiliza el análisis profundo del skill `reviewer` (8 dimensiones) y lo convierte en una **calificación ponderada por criterio**, un **veredicto MDPI** y un **plan de mejora priorizado**, calibrado a los estándares editoriales de MDPI.
 
-A diferencia de `reviewer-mdpi-perspective` (que replica el formulario oficial del revisor), este skill se centra en la **rúbrica de la revista**: puntúa cada criterio con bandas de desempeño y pesos, y entrega un diagnóstico de preparación para el envío.
+A diferencia de `reviewer-mdpi-perspective` (que replica el formulario oficial del revisor en inglés), este skill se centra en la **rúbrica de la revista**: puntúa cada criterio con bandas de desempeño y pesos, y entrega un diagnóstico de preparación para el envío. Al final, **rellena también el formulario oficial de revisión de MDPI (Report 1)** con las respuestas del revisor, listo para pegar en la interfaz de MDPI.
 
 ## Cuándo usarlo
 
@@ -108,14 +108,14 @@ Convierte el **puntaje ponderado total** (y la gravedad de los hallazgos) al ver
 2. **Verificar el alcance** contra la revista MDPI indicada (¿encaja el tema con la sección?).
 3. **Puntuar cada criterio** (1–5) con evidencia concreta y calcular el ponderado.
 4. **Aplicar la puerta ética** y las reglas de decisión.
-5. **Redactar el informe** con la rúbrica, el veredicto, los problemas priorizados y el plan de mejora.
+5. **Redactar el informe** con la rúbrica, el veredicto, los problemas priorizados y el plan de mejora; **rellenar el formulario oficial MDPI (Report 1)** con las respuestas del revisor; y **guardar todo en un archivo** `[nombre_del_articulo]_review.md`.
 6. **Verificar consistencia** entre puntuaciones, problemas y veredicto.
 
 ---
 
 ## Formato de salida
 
-Emite el informe en este formato para que pueda transcribirse/pegarse y quede trazable.
+Emite el informe en este formato para que pueda transcribirse/pegarse y quede trazable. Además de mostrarlo en pantalla, **escribe el contenido completo en un archivo Markdown** llamado `[nombre_del_articulo]_review.md` (p. ej., `deep-learning-sensors_review.md`), reemplazando `[nombre_del_articulo]` por el nombre real del artículo.
 
 ```markdown
 # Revisión con Rúbrica MDPI — [Título del artículo]
@@ -228,6 +228,93 @@ Emite el informe en este formato para que pueda transcribirse/pegarse y quede tr
 ## Comentarios confidenciales (no mostrados a los autores)
 
 [Solo hallazgos éticos, sospechas de mala conducta y preocupaciones confidenciales. "Ninguno" si no aplica.]
+
+---
+
+## Formulario oficial MDPI — Report 1
+
+*Información del revisor (rellena con los datos reales):*
+
+| Campo | Valor |
+|-------|-------|
+| Name | Dr. Alexandra La Cruz |
+| Email | alexandra.lacruz@unibague.edu.co |
+
+### Recommendations for Authors *(se mostrará a los autores)*
+
+*Las respuestas a las siguientes preguntas no reemplazan los comentarios específicos para los autores. Da más detalle en el recuadro "Comments and Suggestions for Authors".*
+
+| Pregunta | Respuesta |
+|----------|-----------|
+| Does the introduction provide sufficient background and include all relevant references? | Yes / Can be improved / Must be improved / Not applicable |
+| Is the research design appropriate? | Yes / Can be improved / Must be improved / Not applicable |
+| Are the methods adequately described? | Yes / Can be improved / Must be improved / Not applicable |
+| Are the results clearly presented? | Yes / Can be improved / Must be improved / Not applicable |
+| Are the conclusions supported by the results? | Yes / Can be improved / Must be improved / Not applicable |
+| Are all figures and tables clear and well-presented? | Yes / Can be improved / Must be improved / Not applicable |
+
+### Quality of English Language
+
+- [ ] The English could be improved to more clearly express the research.
+- [ ] The English is fine and does not require any improvement.
+
+### Recommendations for Editors *(no se mostrará a los autores)*
+
+*Si respondiste "Yes" a alguna de las siguientes preguntas, da detalles en el recuadro "Comments for Editors".*
+
+| Pregunta | Respuesta |
+|----------|-----------|
+| Do you have any potential conflicts of interest with regard to this paper? | Yes / No |
+| Did you detect plagiarism? | Yes / No |
+| Did you detect inappropriate self-citations by authors? | Yes / No |
+| Do you have any other ethical concerns about this study? | Yes / No |
+
+### Ratings
+
+| Criterio | Rating |
+|----------|--------|
+| Originality/Novelty | High / Average / Low / No Answer |
+| Significance of Content | High / Average / Low / No Answer |
+| Quality of Presentation | High / Average / Low / No Answer |
+| Scientific Soundness | High / Average / Low / No Answer |
+| Interest to Readers | High / Average / Low / No Answer |
+| Overall Merit | High / Average / Low / No Answer |
+
+### References
+
+**Are the references cited in this manuscript appropriate and relevant to this research?** Yes / No
+
+### Comments
+
+**Comments and Suggestions for Authors** *(se mostrará a los autores)*
+
+[Transcribe aquí los "## Comentarios para los autores" redactados arriba.]
+
+**Comments for Editors** *(no se mostrará a los autores)*
+
+[Transcribe aquí los "## Comentarios confidenciales" redactados arriba; "None" si no aplica.]
+
+### Overall Recommendation
+
+- [ ] Accept in present form
+- [ ] Accept after minor revision (corrections to minor methodological errors and text editing)
+- [ ] Reconsider after major revision (substantial revisions to text or experimental methods needed)
+- [ ] Reject (article has serious flaws, additional experiments needed, research not conducted correctly)
+
+### Cómo rellenar el Report 1 desde la rúbrica
+
+| Campo del Report 1 | Se alimenta de |
+|--------------------|----------------|
+| Recommendations for Authors (6 preguntas) | Dimensiones de `reviewer` (claridad, rigor, validez, reproducibilidad, figuras) |
+| Originality/Novelty | Criterio 2 (Originalidad): High = 5/4, Average = 3, Low = 2/1 |
+| Significance of Content | Criterio 3 (Significancia) |
+| Quality of Presentation | Criterio 5 (Presentación) |
+| Scientific Soundness | Criterio 4 (Solidez científica) |
+| Interest to Readers | Criterio 6 (Interés) |
+| Overall Merit | Puntaje ponderado total |
+| References | Criterio 7 (Referencias) |
+| Recommendations for Editors | Puerta ética / Criterio 8 (Integridad ética) |
+| Overall Recommendation | Veredicto (reglas de decisión) |
 
 ---
 
